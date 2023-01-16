@@ -5,16 +5,14 @@
 //  Created by Илья Сидорик on 16.01.2023.
 //
 
-
+import StorageServise
 import UIKit
 
 class FeedViewController: UIViewController {
     
     // MARK: - Properties
     
-//    var post = Post(title: "Title of this Post")
-    var post = Post(title: "zdzxc")
-    
+    var post = Post(title: "Title of this Post")    
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()

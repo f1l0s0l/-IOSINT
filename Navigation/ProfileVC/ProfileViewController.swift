@@ -19,17 +19,11 @@ class ProfileViewController: UIViewController {
     ]
     
     
-    private lazy var tableHeaderView: ProfileHeaderView = {
-        let view = ProfileHeaderView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.tableHeaderView = tableHeaderView
         tableView.estimatedRowHeight = 44
         tableView.dataSource = self
         tableView.delegate = self
@@ -130,24 +124,12 @@ extension ProfileViewController: UITableViewDelegate {
                 let backgroundView = UIView(frame: headerView.frame)
                 backgroundView.backgroundColor = UIColor.systemGray6
                 headerView.backgroundView = backgroundView
-//                headerView.translatesAutoresizingMaskIntoConstraints = false
                 return headerView
             }
         }
 
         return nil
     }
-    
-    
-    
-    
-
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if section == 0 {
-//            return 400
-//        }
-//        return 0
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

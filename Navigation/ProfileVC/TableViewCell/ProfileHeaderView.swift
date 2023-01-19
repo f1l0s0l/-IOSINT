@@ -12,7 +12,6 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     // MARK: - Properties
     
    private var statusText = StatusText(text: "Любимая доча")
-
     
     lazy var userPhoto: UIImageView = {
         let imageView = UIImageView()
@@ -27,13 +26,6 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
-    
-    private var userPhotoTopConstraint: NSLayoutConstraint?
-    private var userPhotoLeftConstraint: NSLayoutConstraint?
-    private var userPhotoWidthConstraint: NSLayoutConstraint?
-    private var userPhotoHeightConstraint: NSLayoutConstraint?
-    private var buttonShowStatusTopConstraint: NSLayoutConstraint?
-    private var userPhotoCenterYConstraint: NSLayoutConstraint?
     
     private lazy var userName: UILabel = {
         let label = UILabel()
@@ -84,19 +76,10 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
  
     // MARK: - Life cycle
     
-    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setupViewItems()
-//        self.setupGestures()
-
     }
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-////        self.backgroundColor = .lightGray
-//        setupViewItems()
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -120,52 +103,9 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         self.setupConstraint()
     }
     
-    
-    
-    
-    
-//    func setupGestures() {
-//
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture))
-//        tapGestureRecognizer.numberOfTapsRequired = 1
-//        self.userPhoto.addGestureRecognizer(tapGestureRecognizer)
-//    }
-//
-//
-//    private let profileVC = ProfileViewController()
-//
-//
-//    @objc
-//    private func handleTapGesture() {
-//        print("Нажатие")
-//
-//
-//
-//        self.animateUserPhoto()
-//    }
-
-
-    private func animateUserPhoto() {
-
-        self.userPhotoLeftConstraint?.isActive = false
-        self.userPhotoTopConstraint?.isActive = false
-        self.buttonShowStatusTopConstraint?.isActive = false
-
-        self.userPhotoWidthConstraint?.constant = self.bounds.width
-        self.userPhotoHeightConstraint?.constant = self.bounds.width
-//        self.userPhotoCenterYConstraint?  (equalTo: ProfileViewController().backView.centerYAnchor)
-
-        UIView.animate(withDuration: 3, delay: 0, options: .curveEaseInOut) {
-            self.layoutIfNeeded()
-        }
-    }
-
-    
-    
-    
     //Тут я добавил простую анимацию нажатия на кнопку
     @objc
-    func tapOnButtonShowStatus() {
+    private func tapOnButtonShowStatus() {
         buttonShowStatus.alpha = 1
         userStatus.text = statusText.text
         changeUserStatus.placeholder = statusText.text
@@ -176,50 +116,35 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     }
     
     @objc
-    func tapDownButtonShowStatus() {
+    private func tapDownButtonShowStatus() {
         buttonShowStatus.alpha = 0.6
     }
     
     @objc
-    func statusTextChanged(_ textField: UITextField){
+    private func statusTextChanged(_ textField: UITextField){
         statusText.text = textField.text ?? statusText.text
     }
     //Добавил изменение текста на кнопке в "Set status" согласно макету
     @objc
-    func titleButtonShowStatusChange(){
+    private func titleButtonShowStatusChange(){
         buttonShowStatus.setTitle("Set status", for: .normal)
     }
     
     
-    // MARK: - Constraint
+    // MARK: - Constraints
     
     private func setupConstraint() {
-        
-        self.userPhotoTopConstraint = self.userPhoto.topAnchor.constraint(equalTo: self.topAnchor, constant: 16)
-        self.userPhotoLeftConstraint = self.userPhoto.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16)
-        self.userPhotoWidthConstraint = self.userPhoto.widthAnchor.constraint(equalToConstant: 110)
-        self.userPhotoHeightConstraint = self.userPhoto.heightAnchor.constraint(equalToConstant: 110)
-        
-//        self.userPhotoCenterYConstraint = self.userPhoto.centerYAnchor.constraint(equalTo: ProfileViewController().view.centerYAnchor)
-        
-        self.buttonShowStatusTopConstraint = buttonShowStatus.topAnchor.constraint(equalTo: self.userPhoto.bottomAnchor, constant: 31)
-        
         NSLayoutConstraint.activate([
-//            userPhoto.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-//            userPhoto.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-//            userPhoto.widthAnchor.constraint(equalToConstant: 110),
-//            userPhoto.heightAnchor.constraint(equalToConstant: 110),
-            userPhotoTopConstraint,
-            userPhotoLeftConstraint,
-            userPhotoWidthConstraint,
-            userPhotoHeightConstraint,
+            userPhoto.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            userPhoto.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+            userPhoto.widthAnchor.constraint(equalToConstant: 110),
+            userPhoto.heightAnchor.constraint(equalToConstant: 110),
             
             userName.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 27),
             userName.heightAnchor.constraint(equalToConstant: 18),
             userName.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            buttonShowStatusTopConstraint,
-//            buttonShowStatus.topAnchor.constraint(equalTo: self.userPhoto.bottomAnchor, constant: 31), //было значение 16
+            buttonShowStatus.topAnchor.constraint(equalTo: self.userPhoto.bottomAnchor, constant: 31), //было значение 16
             buttonShowStatus.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             buttonShowStatus.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             buttonShowStatus.heightAnchor.constraint(equalToConstant: 50),
@@ -233,7 +158,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
             changeUserStatus.leftAnchor.constraint(equalTo: self.userStatus.leftAnchor, constant: 0),
             changeUserStatus.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             changeUserStatus.heightAnchor.constraint(equalToConstant: 40),
-        ].compactMap({ $0 }))
+        ])
     }
     
 }

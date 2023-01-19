@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40E82002979683600C48E14 /* DataPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E81FF2979683600C48E14 /* DataPosts.swift */; };
 		A4815A2629758E36005EF778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A2529758E36005EF778 /* AppDelegate.swift */; };
 		A4815A2829758E36005EF778 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A2729758E36005EF778 /* SceneDelegate.swift */; };
 		A4815A2F29758E38005EF778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4815A2E29758E38005EF778 /* Assets.xcassets */; };
 		A4815A3229758E38005EF778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4815A3029758E38005EF778 /* LaunchScreen.storyboard */; };
 		A4815A4029758EDC005EF778 /* StatusText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A3F29758EDC005EF778 /* StatusText.swift */; };
-		A4815A4229758EE8005EF778 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A4129758EE8005EF778 /* TextFieldWithPadding.swift */; };
+		A4815A4229758EE8005EF778 /* Extension + TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A4129758EE8005EF778 /* Extension + TextFieldWithPadding.swift */; };
 		A4815A4429758EF7005EF778 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A4329758EF7005EF778 /* PostView.swift */; };
 		A4815A4629758F04005EF778 /* ArrayPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A4529758F04005EF778 /* ArrayPhotos.swift */; };
 		A4815A4829758FAD005EF778 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A4729758FAD005EF778 /* TabBarController.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A40E81FF2979683600C48E14 /* DataPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPosts.swift; sourceTree = "<group>"; };
 		A4815A2229758E36005EF778 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4815A2529758E36005EF778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4815A2729758E36005EF778 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		A4815A3129758E38005EF778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4815A3329758E38005EF778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4815A3F29758EDC005EF778 /* StatusText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusText.swift; sourceTree = "<group>"; };
-		A4815A4129758EE8005EF778 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		A4815A4129758EE8005EF778 /* Extension + TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TextFieldWithPadding.swift"; sourceTree = "<group>"; };
 		A4815A4329758EF7005EF778 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		A4815A4529758F04005EF778 /* ArrayPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayPhotos.swift; sourceTree = "<group>"; };
 		A4815A4729758FAD005EF778 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -139,8 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				A4815A3F29758EDC005EF778 /* StatusText.swift */,
-				A4815A4129758EE8005EF778 /* TextFieldWithPadding.swift */,
+				A4815A4129758EE8005EF778 /* Extension + TextFieldWithPadding.swift */,
 				A4815A4329758EF7005EF778 /* PostView.swift */,
+				A40E81FF2979683600C48E14 /* DataPosts.swift */,
 				A4815A4529758F04005EF778 /* ArrayPhotos.swift */,
 			);
 			path = Data;
@@ -337,10 +340,11 @@
 				A4815A4629758F04005EF778 /* ArrayPhotos.swift in Sources */,
 				A4815A4E29759000005EF778 /* InfoViewController.swift in Sources */,
 				A4815A4A29758FDE005EF778 /* FeedViewController.swift in Sources */,
+				A40E82002979683600C48E14 /* DataPosts.swift in Sources */,
 				A4815A4829758FAD005EF778 /* TabBarController.swift in Sources */,
 				A4815A4029758EDC005EF778 /* StatusText.swift in Sources */,
 				A4815A4C29758FF7005EF778 /* PostViewController.swift in Sources */,
-				A4815A4229758EE8005EF778 /* TextFieldWithPadding.swift in Sources */,
+				A4815A4229758EE8005EF778 /* Extension + TextFieldWithPadding.swift in Sources */,
 				A4815A5129759029005EF778 /* LogInViewController.swift in Sources */,
 				A4815A5F29759110005EF778 /* PhotosCollectionViewCell.swift in Sources */,
 				A4815A2629758E36005EF778 /* AppDelegate.swift in Sources */,

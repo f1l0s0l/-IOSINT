@@ -38,14 +38,12 @@ class InfoViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    func setupUI() {
+    private func setupUI() {
         setupAlertConfiguration()
         setupButton()
     }
     
-    
-    
-    func setupAlertConfiguration() {
+    private func setupAlertConfiguration() {
         let action1 = UIAlertAction(title: "OK", style: .default) {_ in
             print("OK")
         }
@@ -56,7 +54,7 @@ class InfoViewController: UIViewController {
         alertController.addAction(action2)
     }
     
-    func setupButton() {
+    private func setupButton() {
         button.addTarget(self, action: #selector(addTarget), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 50)
         view.addSubview(button)
@@ -64,14 +62,15 @@ class InfoViewController: UIViewController {
         
     }
     
-    @objc func addTarget() {
+    @objc
+    private func addTarget() {
         self.present(alertController, animated: true, completion: nil)
     }
     
     
     // MARK: - Constraint
 
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor)

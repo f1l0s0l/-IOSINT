@@ -20,7 +20,6 @@ class FeedViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.alignment = .center
-//        stackView.backgroundColor = .gray
         return stackView
     }()
     
@@ -50,9 +49,6 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
-        view.addSubview(stackView)
-        setupStackView()
-        setupConstraints()
     }
     
  
@@ -61,6 +57,9 @@ class FeedViewController: UIViewController {
     private func setupViewController() {
         self.view.backgroundColor = .white
         self.title = "Feed"
+        self.view.addSubview(stackView)
+        self.setupStackView()
+        self.setupConstraints()
     }
     
     private func setupStackView() {
@@ -78,22 +77,23 @@ class FeedViewController: UIViewController {
     }
     
     @objc
-    func tochDownOnButtonFirst() {
+    private func tochDownOnButtonFirst() {
         buttonFirst.alpha = 0.6
     }
+    
     @objc
-    func tochUpInsideOnButtonFirst() {
+    private func tochUpInsideOnButtonFirst() {
         buttonFirst.alpha = 1
         let postViewController = PostViewController()
         postViewController.titlePost = post.title
         navigationController?.pushViewController(postViewController, animated: true)
     }
     @objc
-    func tochDownOnButtonSecond() {
+    private func tochDownOnButtonSecond() {
         buttonSecond.alpha = 0.6
     }
     @objc
-    func tochUpInsideOnButtonSecond() {
+    private func tochUpInsideOnButtonSecond() {
         buttonSecond.alpha = 1
         let postViewController = PostViewController()
         postViewController.titlePost = post.title
@@ -101,8 +101,9 @@ class FeedViewController: UIViewController {
     }
     
     
+    // MARK: - Constraints
+    
     private func setupConstraints() {
-        
         NSLayoutConstraint.activate([
             stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
             stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),

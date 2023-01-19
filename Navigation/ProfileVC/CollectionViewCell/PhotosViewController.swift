@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosViewController: UIViewController {
 
-    // MARK: - Properties
+    // MARK: - Constants
 
     private enum Constants {
         static let numberOfColums: CGFloat = 3
@@ -19,6 +19,7 @@ class PhotosViewController: UIViewController {
     }
     
     
+    // MARK: - Properties
     
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -37,7 +38,6 @@ class PhotosViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCollectionViewCellID")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "DefaultCellID")
-        
         return collectionView
     }()
     
@@ -49,11 +49,7 @@ class PhotosViewController: UIViewController {
         self.setupView()
         self.setupConstraint()
     }
-// Это очень важная штука для "Юзер френдли"
-// если добавить self.navigationController?.navigationBar.isHidden = false в viewDidLoad то все работает
-// И  если начать свайп назад, пропадает navigation bar
-// Но!!! Если не доконца свайпнуть, и вернуть обратно все, то Navigation bar так и не появиться)))
-// На сколько я помню, это срабатывает каждый раз при заходе на экран, как раз то, что нам и нужно
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
@@ -71,6 +67,9 @@ class PhotosViewController: UIViewController {
         self.view.addSubview(collectionView)
     }
     
+    
+    // MARK: - Constraints
+
     private func setupConstraint() {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
@@ -82,6 +81,9 @@ class PhotosViewController: UIViewController {
   
 }
 
+
+    // MARK: - Extension UICollectionViewDataSourse
+
 extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -90,9 +92,6 @@ extension PhotosViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DefaultCellID", for: indexPath)
-//        cell.backgroundColor = .orange
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCollectionViewCellID", for: indexPath) as? PhotosCollectionViewCell else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DefaultCellID", for: indexPath)
             cell.backgroundColor = .orange
@@ -103,6 +102,9 @@ extension PhotosViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+
+    // MARK: - Extension UICollectionViewDelegateFlowLayout
 
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     

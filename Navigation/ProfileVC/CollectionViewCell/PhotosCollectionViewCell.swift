@@ -32,18 +32,23 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    // MARK: - Methods
+    // MARK: - Public
     
     func setup(withPhoto photo: String) {
         self.imageView.image = UIImage(named: photo)
     }
+
+    
+    // MARK: - Methods
     
     private func setupView() {
         self.contentView.addSubview(imageView)
         self.setupContraints()
     }
     
+    
+    // MARK: - Constraints
+
     private func setupContraints(){
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),

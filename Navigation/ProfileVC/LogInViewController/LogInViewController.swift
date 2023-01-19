@@ -45,7 +45,6 @@ class LogInViewController: UIViewController {
         textField.placeholder = "Email or phone"
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-//        textField.tintColor = accentColor  В макете указано, tintColor: accentColor, Что это значит и как выбрать это значение
         textField.clearButtonMode = .whileEditing
         textField.autocapitalizationType = .none
         textField.textPadding.left = 8
@@ -66,7 +65,6 @@ class LogInViewController: UIViewController {
         textField.placeholder = "Password"
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        //        textField.tintColor = accentColor  В макете указано, tintColor: accentColor, Что это значит и как выбрать это значение
         textField.autocapitalizationType = .none
         textField.textPadding.left = 8
         textField.delegate = self
@@ -92,7 +90,7 @@ class LogInViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewController()
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,7 +102,7 @@ class LogInViewController: UIViewController {
     
     // MARK: - Methods
 
-    private func setupViewController() {
+    private func setupView() {
         self.view.backgroundColor = .white
         self.view.addSubview(self.scrollView)
         setupScrollView()
@@ -196,8 +194,10 @@ class LogInViewController: UIViewController {
 }
 
 
-extension LogInViewController: UITextFieldDelegate {
+//MARK: - Extension UITextFieldDelegate
 
+extension LogInViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0 {
             self.userPasswordTextField.becomeFirstResponder()

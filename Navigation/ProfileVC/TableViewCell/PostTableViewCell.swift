@@ -82,18 +82,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     
-    // MARK: - Methods
-
-    private func setupTableViewCell(){
-        self.contentView.addSubview(self.titleView)
-        self.contentView.addSubview(self.postImageView)
-        self.contentView.addSubview(self.footerView)
-
-        titleView.addSubview(titleTextLabel)
-        footerView.addSubview(footerTextLabel)
-        footerView.addSubview(likesCountLabel)
-        footerView.addSubview(viewsCountLabel)
-    }
+    // MARK: - Public
     
     func setup(withPost post: PostView) {
         self.titleTextLabel.text = post.author
@@ -103,6 +92,23 @@ class PostTableViewCell: UITableViewCell {
         self.viewsCountLabel.text = "Views: \(post.views)"
     }
     
+    
+    // MARK: - Methods
+
+    private func setupTableViewCell(){
+        self.contentView.addSubview(self.titleView)
+        self.contentView.addSubview(self.postImageView)
+        self.contentView.addSubview(self.footerView)
+
+        self.titleView.addSubview(self.titleTextLabel)
+        self.footerView.addSubview(self.footerTextLabel)
+        self.footerView.addSubview(self.likesCountLabel)
+        self.footerView.addSubview(self.viewsCountLabel)
+    }
+    
+    
+    // MARK: - Constraints
+
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             titleView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
@@ -134,11 +140,8 @@ class PostTableViewCell: UITableViewCell {
             
             viewsCountLabel.rightAnchor.constraint(equalTo: self.footerView.rightAnchor, constant: -16),
             viewsCountLabel.centerYAnchor.constraint(equalTo: self.likesCountLabel.centerYAnchor),
-            viewsCountLabel.bottomAnchor.constraint(equalTo: self.footerView.bottomAnchor, constant: -16)
-
+            viewsCountLabel.bottomAnchor.constraint(equalTo: self.footerView.bottomAnchor, constant: -16),
         ])
     }
-    
-    
     
 }

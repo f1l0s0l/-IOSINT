@@ -30,13 +30,14 @@ class PostViewController: UIViewController {
         setupBarButtonItem()
     }
     
-    func setupBarButtonItem() {
+    private func setupBarButtonItem() {
         let barItem = UIBarButtonItem(image: UIImage(systemName: "folder"), style: .plain, target: self, action: #selector(buttonAction))
         barItem.tintColor = .black
         self.navigationItem.rightBarButtonItem = barItem
     }
     
-    @objc private func buttonAction() {
+    @objc
+    private func buttonAction() {
         let infoViewController = InfoViewController()
         navigationController?.present(infoViewController, animated: true)
     }

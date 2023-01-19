@@ -5,6 +5,7 @@
 //  Created by Илья Сидорик on 16.01.2023.
 //
 
+import iOSIntPackage
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
@@ -82,6 +83,23 @@ class PostTableViewCell: UITableViewCell {
     }
     
     
+    // MARK: - Public
+    
+    func setup(withPost post: PostView) {
+        self.titleTextLabel.text = post.author
+        
+        if let imageViewImage = UIImage(named: post.image) {
+            ImageProcessor().processImage(sourceImage: imageViewImage, filter: .posterize) { image in
+                self.postImageView.image = image
+            }
+        }
+        
+        self.footerTextLabel.text = post.description
+        self.likesCountLabel.text = "Likes: \(post.likes)"
+        self.viewsCountLabel.text = "Views: \(post.views)"
+    }
+    
+    
     // MARK: - Methods
 
     private func setupTableViewCell(){
@@ -95,13 +113,8 @@ class PostTableViewCell: UITableViewCell {
         footerView.addSubview(viewsCountLabel)
     }
     
-    func setup(withPost post: PostView) {
-        self.titleTextLabel.text = post.author
-        self.postImageView.image = UIImage(named: post.image)
-        self.footerTextLabel.text = post.description
-        self.likesCountLabel.text = "Likes: \(post.likes)"
-        self.viewsCountLabel.text = "Views: \(post.views)"
-    }
+    
+    
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -138,7 +151,5 @@ class PostTableViewCell: UITableViewCell {
 
         ])
     }
-    
-    
     
 }

@@ -55,6 +55,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Любимая доча"
+        label.numberOfLines = 2
         label.textAlignment = .center
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
@@ -83,6 +84,16 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: - Public
+    
+    func setup(user: User) {
+        self.userName.text = user.fullName
+        self.userStatus.text = user.status
+        self.statusText.text = user.status
+        self.userPhoto.image = user.avatar
     }
     
     

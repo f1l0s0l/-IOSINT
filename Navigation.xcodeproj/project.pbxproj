@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A40E82002979683600C48E14 /* DataPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E81FF2979683600C48E14 /* DataPosts.swift */; };
+		A40E8202297976D700C48E14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E8201297976D700C48E14 /* User.swift */; };
+		A40E82042979783400C48E14 /* UserServise Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E82032979783400C48E14 /* UserServise Protocol.swift */; };
+		A40E8206297978DE00C48E14 /* CurrentUserServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E8205297978DE00C48E14 /* CurrentUserServise.swift */; };
+		A40E82092979848300C48E14 /* ErrorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E82082979848300C48E14 /* ErrorAlertController.swift */; };
 		A4815A2629758E36005EF778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A2529758E36005EF778 /* AppDelegate.swift */; };
 		A4815A2829758E36005EF778 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815A2729758E36005EF778 /* SceneDelegate.swift */; };
 		A4815A2F29758E38005EF778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4815A2E29758E38005EF778 /* Assets.xcassets */; };
@@ -59,6 +63,10 @@
 
 /* Begin PBXFileReference section */
 		A40E81FF2979683600C48E14 /* DataPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPosts.swift; sourceTree = "<group>"; };
+		A40E8201297976D700C48E14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A40E82032979783400C48E14 /* UserServise Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserServise Protocol.swift"; sourceTree = "<group>"; };
+		A40E8205297978DE00C48E14 /* CurrentUserServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserServise.swift; sourceTree = "<group>"; };
+		A40E82082979848300C48E14 /* ErrorAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertController.swift; sourceTree = "<group>"; };
 		A4815A2229758E36005EF778 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4815A2529758E36005EF778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4815A2729758E36005EF778 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40E82072979847000C48E14 /* ErrorAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				A40E82082979848300C48E14 /* ErrorAlertController.swift */,
+			);
+			path = ErrorAlertController;
+			sourceTree = "<group>";
+		};
 		A4815A1929758E36005EF778 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +141,7 @@
 		A4815A2429758E36005EF778 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				A40E82072979847000C48E14 /* ErrorAlertController */,
 				A4815A3929758E51005EF778 /* Data */,
 				A4815A3B29758E65005EF778 /* Aplication */,
 				A4815A3C29758E81005EF778 /* TabBarController */,
@@ -145,6 +162,9 @@
 				A4815A4329758EF7005EF778 /* PostView.swift */,
 				A40E81FF2979683600C48E14 /* DataPosts.swift */,
 				A4815A4529758F04005EF778 /* ArrayPhotos.swift */,
+				A40E8201297976D700C48E14 /* User.swift */,
+				A40E82032979783400C48E14 /* UserServise Protocol.swift */,
+				A40E8205297978DE00C48E14 /* CurrentUserServise.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -342,6 +362,7 @@
 				A4815A4A29758FDE005EF778 /* FeedViewController.swift in Sources */,
 				A40E82002979683600C48E14 /* DataPosts.swift in Sources */,
 				A4815A4829758FAD005EF778 /* TabBarController.swift in Sources */,
+				A40E82042979783400C48E14 /* UserServise Protocol.swift in Sources */,
 				A4815A4029758EDC005EF778 /* StatusText.swift in Sources */,
 				A4815A4C29758FF7005EF778 /* PostViewController.swift in Sources */,
 				A4815A4229758EE8005EF778 /* Extension + TextFieldWithPadding.swift in Sources */,
@@ -349,10 +370,13 @@
 				A4815A5F29759110005EF778 /* PhotosCollectionViewCell.swift in Sources */,
 				A4815A2629758E36005EF778 /* AppDelegate.swift in Sources */,
 				A4815A5A2975907F005EF778 /* PostTableViewCell.swift in Sources */,
+				A40E82092979848300C48E14 /* ErrorAlertController.swift in Sources */,
 				A4815A532975904A005EF778 /* ProfileViewController.swift in Sources */,
+				A40E8206297978DE00C48E14 /* CurrentUserServise.swift in Sources */,
 				A4815A562975906D005EF778 /* ProfileHeaderView.swift in Sources */,
 				A4815A4429758EF7005EF778 /* PostView.swift in Sources */,
 				A4815A2829758E36005EF778 /* SceneDelegate.swift in Sources */,
+				A40E8202297976D700C48E14 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

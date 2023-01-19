@@ -8,5 +8,5 @@
 import Foundation
 
 struct StatusText {
-    var text: String
+    var text: String?
 }
